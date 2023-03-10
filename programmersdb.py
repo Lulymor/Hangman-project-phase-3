@@ -8,7 +8,7 @@ class ProgrammersDB:
 
     def new_word(self, word):
         self.cursor.execute(
-            'INSERT OR IGNORE INTO programmers (word) VALUES (?)', (word))
+            'INSERT OR IGNORE INTO programmers (word) VALUES (?)', (word,))
         self.connect.commit()
 
     def list_words(self):

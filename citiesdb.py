@@ -8,7 +8,7 @@ class CitiesDB:
 
     def new_word(self, word):
         self.cursor.execute(
-            'INSERT OR IGNORE INTO cities (word) VALUES (?)', (word))
+            'INSERT OR IGNORE INTO cities (word) VALUES (?)', (word,))
         self.connect.commit()
 
     def list_words(self):

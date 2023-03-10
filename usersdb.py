@@ -13,7 +13,7 @@ class UsersDB:
 
     def add_score(self, score, username):
         self.cursor.execute(
-            'UPDATE "users" SET "score"=? WHERE "username"=?', (score, username))
+            'UPDATE "users" SET "score"=? WHERE "username" LIKE ?', (score, username))
         self.connect.commit()
 
     def search_user(self, value):
